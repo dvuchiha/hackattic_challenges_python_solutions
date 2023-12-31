@@ -2,15 +2,11 @@ import requests
 import json
 import base64
 import struct
-from utils import submit_solution, DOMAIN
+from utils import submit_solution, get_problem
 
 
 problem_endpoint = '/challenges/help_me_unpack/problem?access_token=b5f0878f05fe56ea'
-problem_url = DOMAIN + problem_endpoint
-
-resp = requests.get(problem_url)
-json_string = resp.content.decode('utf-8') # binary to string
-result_dict = json.loads(json_string) # string to dict
+result_dict = get_problem(problem_endpoint)
 
 '''
 TO solve this , we follow 2 step process
@@ -38,6 +34,5 @@ solution['big_endian_double'] = struct.unpack('>d',decoded_data[24:32])[0]
 print(solution)
 
 solution_endpoint = '/challenges/help_me_unpack/solve?access_token=b5f0878f05fe56ea'
-solution_url = DOMAIN + solution_endpoint
-submit_solution(solution, solution_url)
+submit_solution(solution, solution_endpoint)
 
