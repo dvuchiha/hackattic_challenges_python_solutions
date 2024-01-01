@@ -1,3 +1,8 @@
 /hackattic_challenges/
 requirements.txt
 .env
+*.pem
+*.cert
+*.csr
+/__pycache__/
+trash.py
