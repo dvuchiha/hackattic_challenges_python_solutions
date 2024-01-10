@@ -1,9 +1,10 @@
-/hackattic_challenges/
-*.txt
-.env
-*.pem
-*.cert
-*.csr
-/__pycache__/
+# Ignore everything
+/*
+
+# Allow Python files
+!*.py
+
+# Allow .gitignore file
+!.gitignore
+
 trash.py
-*.zip
