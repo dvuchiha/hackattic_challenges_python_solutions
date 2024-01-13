@@ -81,6 +81,7 @@ The callbacks in the parser are called upon encountering the specific data struc
 can rewrite them for our purpose of extracting value out of certain datastructures.
 
 Also datetime obj gives timestamp -5.5hrs to adjust for UTC, took some time debugging and fixing that.
+parser reference -> https://github.com/sripathikrishnan/redis-rdb-tools/blob/master/rdbtools/parser.py
 '''
 data = get_problem(PROBLEM_ENDPOINT)
 write_redis_dump(data)
