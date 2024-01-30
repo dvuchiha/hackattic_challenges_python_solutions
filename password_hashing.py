@@ -1,4 +1,4 @@
-from utils import submit_solution, get_problem
+from utils import submit_solution, get_problem, ACCESS_TOKEN
 import base64
 import hashlib
 import hmac
@@ -6,8 +6,8 @@ import binascii
 import scrypt
 
 
-PROBLEM_ENDPOINT = '/challenges/password_hashing/problem?access_token=b5f0878f05fe56ea'
-SOLUTION_ENDPOINT = '/challenges/password_hashing/solve?access_token=b5f0878f05fe56ea'
+PROBLEM_ENDPOINT = f'/challenges/password_hashing/problem?access_token={ACCESS_TOKEN}'
+SOLUTION_ENDPOINT = f'/challenges/password_hashing/solve?access_token={ACCESS_TOKEN}'
 
 
 def calculate_sha256_hash(password):

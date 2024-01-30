@@ -1,4 +1,4 @@
-from utils import submit_solution, get_problem
+from utils import submit_solution, get_problem, ACCESS_TOKEN
 import base64
 import io
 import gzip
@@ -15,8 +15,8 @@ def read_csv_to_list(file_path):
 
     return data_list
 
-PROBLEM_ENDPOINT = '/challenges/backup_restore/problem?access_token=b5f0878f05fe56ea'
-SOLUTION_ENDPOINT = '/challenges/backup_restore/solve?access_token=b5f0878f05fe56ea'
+PROBLEM_ENDPOINT = f'/challenges/backup_restore/problem?access_token={ACCESS_TOKEN}'
+SOLUTION_ENDPOINT = f'/challenges/backup_restore/solve?access_token={ACCESS_TOKEN}'
 
 data = get_problem(PROBLEM_ENDPOINT)
 dump = data['dump']

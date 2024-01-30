@@ -1,11 +1,11 @@
-from utils import submit_solution, get_problem
+from utils import submit_solution, get_problem, ACCESS_TOKEN
 import base64
 from rdbtools import RdbParser, RdbCallback
 from rdbtools.encodehelpers import bytes_to_unicode
 
 
-PROBLEM_ENDPOINT = '/challenges/the_redis_one/problem?access_token=b5f0878f05fe56ea'
-SOLUTION_ENDPOINT = '/challenges/the_redis_one/solve?access_token=b5f0878f05fe56ea'
+PROBLEM_ENDPOINT = f'/challenges/the_redis_one/problem?access_token={ACCESS_TOKEN}'
+SOLUTION_ENDPOINT = f'/challenges/the_redis_one/solve?access_token={ACCESS_TOKEN}'
 
 def write_redis_dump(data):
     rdb_data = data['rdb']

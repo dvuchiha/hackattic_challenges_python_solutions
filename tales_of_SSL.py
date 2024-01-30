@@ -1,4 +1,4 @@
-from utils import submit_solution, get_problem
+from utils import submit_solution, get_problem, ACCESS_TOKEN
 import base64
 from cryptography.hazmat.primitives import serialization
 from cryptography.hazmat.primitives import hashes
@@ -17,8 +17,8 @@ To create a Self-signed certificate, follow these steps
 3. sign the request using RSA_key and create the certificate
 '''
 
-PROBLEM_ENDPOINT = '/challenges/tales_of_ssl/problem?access_token=b5f0878f05fe56ea'
-SOLUTION_ENDPOINT = '/challenges/tales_of_ssl/solve?access_token=b5f0878f05fe56ea'
+PROBLEM_ENDPOINT = f'/challenges/tales_of_ssl/problem?access_token={ACCESS_TOKEN}'
+SOLUTION_ENDPOINT = f'/challenges/tales_of_ssl/solve?access_token={ACCESS_TOKEN}'
 
 
 data = get_problem(PROBLEM_ENDPOINT)

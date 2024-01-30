@@ -1,10 +1,10 @@
 import hashlib
 import json
-from utils import submit_solution, get_problem
+from utils import submit_solution, get_problem, ACCESS_TOKEN
 
 
-PROBLEM_ENDPOINT = '/challenges/mini_miner/problem?access_token=b5f0878f05fe56ea'
-SOLUTION_ENDPOINT = '/challenges/mini_miner/solve?access_token=b5f0878f05fe56ea'
+PROBLEM_ENDPOINT = f'/challenges/mini_miner/problem?access_token={ACCESS_TOKEN}'
+SOLUTION_ENDPOINT = f'/challenges/mini_miner/solve?access_token={ACCESS_TOKEN}'
 
 def calculate_sha256_hash(data,difficulty):
     sha256_hash = hashlib.sha256()

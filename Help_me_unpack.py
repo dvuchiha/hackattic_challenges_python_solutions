@@ -1,11 +1,10 @@
-import requests
-import json
+
 import base64
 import struct
-from utils import submit_solution, get_problem
+from utils import submit_solution, get_problem, ACCESS_TOKEN
 
 
-problem_endpoint = '/challenges/help_me_unpack/problem?access_token=b5f0878f05fe56ea'
+problem_endpoint = f'/challenges/help_me_unpack/problem?access_token={ACCESS_TOKEN}'
 result_dict = get_problem(problem_endpoint)
 
 '''
@@ -33,6 +32,6 @@ solution['big_endian_double'] = struct.unpack('>d',decoded_data[24:32])[0]
 
 print(solution)
 
-solution_endpoint = '/challenges/help_me_unpack/solve?access_token=b5f0878f05fe56ea'
+solution_endpoint = f'/challenges/help_me_unpack/solve?access_token={ACCESS_TOKEN}'
 submit_solution(solution, solution_endpoint)
 
