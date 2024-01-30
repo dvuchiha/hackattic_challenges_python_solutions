@@ -1,7 +1,14 @@
 import requests
 import json
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 DOMAIN = 'https://hackattic.com'
+
+ACCESS_TOKEN = os.environ.get('ACCESS_TOKEN')
 
 def submit_solution(input_data, url):
     headers = {'Content-Type': 'application/json'}
